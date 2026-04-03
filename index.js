@@ -105,7 +105,7 @@ const zonas = [
   { nombre: "Salinas",              precio: 1200 },
   { nombre: "San Antonio",          precio: 1500 },
   { nombre: "Santa Catalina",       precio: 600  },
-  { nombre: "Santa Lucía",          precio: 600  },
+  { nombre: "Santa Lucía",          precio: 1200  },
   { nombre: "Santa Teresita",       precio: 800  },
   { nombre: "Santiago Vázquez",     precio: 600  },
   { nombre: "Sauce",                precio: 1000 },
