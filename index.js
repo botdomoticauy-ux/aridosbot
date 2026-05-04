@@ -401,5 +401,16 @@ app.get("/", (req, res) => {
   res.json({ status: "AridosBot activo 🪨", timestamp: new Date().toISOString() });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;// — Verificación webhook Meta
+app.get("/webhook", (req, res) => {
+  const mode = req.query["hub.mode"];
+  const token = req.query["hub.verify_token"];
+  const challenge = req.query["hub.challenge"];
+
+  if (mode === "subscribe" && token === process.env.VERIFY_TOKEN) {
+    res.status(200).send(challenge);
+  } else {
+    res.sendStatus(403);
+  }
+});
 app.listen(PORT, () => console.log(`🚀 AridosBot corriendo en puerto ${PORT}`));
